@@ -30,6 +30,7 @@ const Navbar = () => {
                     <Link to={"/"}>Trendify 🛒</Link>
                 </Text>
 
+
                 <HStack spacing={2} alignItems={"center"}>
                     <Link to={"/create"}>
                         <Button>

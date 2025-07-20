@@ -1,6 +1,9 @@
 import { Box, Button, Container, Heading, Input, useColorModeValue, useToast, VStack } from "@chakra-ui/react";
 import { useState } from "react";
 import { useProductStore } from "../store/product";
+import { Link } from "react-router-dom";
+import { withTheme } from "@emotion/react";
+
 
 const CreatePage = () => {
     const [newProduct, setNewProduct] = useState({
@@ -33,9 +36,16 @@ const CreatePage = () => {
     };
 
     return (
-        <Container maxW={"container.sm"}>
+        <Container
+            maxW="container.sm"
+            bgGradient="linear(to-r, #0f2027, #203a43, #2c5364)" // Dark blue gradient
+            backdropFilter="blur(10px)" // Glassy blur effect
+            borderRadius="md"
+            p={6}
+            boxShadow="lg"
+        >
             <VStack spacing={8}>
-                <Heading as={"h1"} size={"2xl"} textAlign={"center"} mb={8}>
+                <Heading color={"white"} as={"h1"} size={"2xl"} textAlign={"center"} mb={8}>
                     Create New Product
                 </Heading>
 
@@ -64,7 +74,17 @@ const CreatePage = () => {
                         <Button colorScheme='blue' onClick={handleAddProduct} w='full'>
                             Add Product
                         </Button>
+
+                        <Button
+                            colorScheme='blue'
+                            w='full'
+                            as={Link}
+                            to="/"
+                        >All Products</Button>
+
+
                     </VStack>
+
                 </Box>
             </VStack>
         </Container>
